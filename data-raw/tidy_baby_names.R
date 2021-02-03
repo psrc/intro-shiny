@@ -11,9 +11,9 @@ data.dir <- here('data-raw', 'names-by-state')
 # List all files in the directory with their absolute path
 files <- list.files(data.dir, pattern = '.TXT', full.names = TRUE)
 
-# purrr::partial() is an adverb. We create a new verb that modifies the default arguments of the original verb.
+# purrr::partial() is an adverb. 
+# We create a new verb that fixes certain arguments of the original verb to our liking.
 # This is convenient for when we use purrr::map() in the next step. 
-# map() calls another function to do all the stuff. 
 
 # New function: read_state_file()
 read_state_file <- partial(read_delim, 
