@@ -13,8 +13,8 @@ src <- p("Source:",
          tags$a(href = "https://www.ssa.gov/oact/babynames/limits.html",
                 "Social Security Administration"))
 txt_box <- textInput("name", 
-          label = "Enter name",
-          placeholder = "Jane")
+                     label = "Enter name",
+                     placeholder = "Jane")
 txt_disp <- textOutput("name_entered")
 tbl_disp <- tableOutput("main_table")
 
