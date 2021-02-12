@@ -27,7 +27,11 @@ ui <- fluidPage(
   sidebarLayout(
     sidebarPanel(
       txt_box,
-      txt_disp
+      txt_disp,
+      # add a dropdown menu to select state
+      selectInput("state",
+                  label = 'Select State',
+                  choices = unique(df$state))
     ),
     mainPanel(
       fluidRow(
@@ -56,7 +60,7 @@ server <- function(input, output) {
   
   filtered_df <- reactive({
     df %>% 
-      filter(name == input$name)
+      filter(name == input$name & state == input$state)
   })
   
   output$name_entered <- renderText({

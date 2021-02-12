@@ -2,6 +2,5 @@
 .Rhistory
 .RData
 .Ruserdata
-data-raw/*.zip
-data-raw/names-by-state
+
 
