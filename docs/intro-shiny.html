@@ -6,6 +6,10 @@
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
   </head>
   <body>
     <textarea id="source">
@@ -15,6 +19,7 @@ class: center, middle, inverse, title-slide
 ## R Learning Series for PSRC
 
 ---
+
 
 
 
@@ -173,6 +178,71 @@ Instead of storing the end-result in an R object, the end-result is some interac
 
 ---
 
+class: inverse, center, middle
+
+# Reactivity
+
+## Delaying Reactions
+
+---
+
+### Delay a reactive
+
+.panelset[
+
+.panel[.panel-name[Graph]
+![](images/slide-images/event-reactive.png)
+]
+
+.panel[.panel-name[Events]
+
+```r
+a_name &lt;- eventReactive(input$action_button, {
+  # do stuff when button is clicked
+})
+```
+
+
+```r
+a_name &lt;- eventReactive(input$checkbox %in% c(1, 2), {
+  # do stuff when boxes 1 or 2 are checked
+})
+```
+]
+
+]
+
+---
+
+### Delay an observer
+
+.panelset[
+
+.panel[.panel-name[Graph]
+![](images/slide-images/observe-event.png)
+]
+
+.panel[.panel-name[Events]
+
+```r
+observeEvent(input$action_button, {
+  # do side-effect when button is clicked
+})
+```
+
+
+```r
+observeEvent(input$checkbox %in% c(1, 2), {
+  # do side-effect when boxes 1 or 2 are checked
+})
+```
+]
+
+]
+
+---
+
+
 # shinyapps.io
 
 ## Create a login
@@ -183,7 +253,7 @@ You'll be asked to create an account name which is just the prefix of your futur
 - the only way is by contacting support@rstudio.com
 - [https://community.rstudio.com/t/delete-account-shinyapps-io/22692](https://community.rstudio.com/t/delete-account-shinyapps-io/22692)
 
----
+
 
 
 
