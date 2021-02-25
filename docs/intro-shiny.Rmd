@@ -1,0 +1,191 @@
+---
+title: "Intro to Shiny"
+subtitle: "R Learning Series for PSRC"
+# author: "Christy Lam"
+# date: "2021/1/28 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
+library(here)
+library(emo)
+```
+
+class: inverse, center, middle
+
+# Running an app
+
+## A high level view
+
+---
+
+class: center, middle
+
+### When running an app locally, our computer is the web server
+
+![](images/slide-images/Slide1.SVG)
+
+
+
+---
+
+class: center, middle
+
+### When our app is deployed, a shiny server is our web server
+
+![](images/slide-images/Slide2.SVG)
+
+---
+
+class: inverse, center, middle
+
+# The UI
+
+---
+
+# Inputs
+
+![](images/slide-images/inputs.png)
+---
+
+# Outputs
+
+![](images/slide-images/outputs.png)
+---
+
+# Layout
+
+![](images/slide-images/layout.png)
+---
+
+class: inverse, center, middle
+
+# Reactivity
+
+## The Building Blocks
+
+---
+
+### Reactives
+
+```{r}
+a_name <- reactive({
+  # do stuff
+})
+```
+
+- a conduit between reactive source and endpoint
+
+![](images/slide-images/reactive.png)
+
+---
+
+### Reactives
+
+- can access other reactive values
+
+```{r}
+a_name <- reactive({
+  # do stuff
+})
+
+another_name <- reactive({
+  # do more stuff with a_name
+  a_name() 
+})
+
+```
+
+--
+
+- returns a value (e.g. data frame, list, etc. )
+
+--
+
+- returned value is cached until a reactive dependency is changed 
+
+---
+
+.pull-left[
+## Reactives `r ji("zzz")`
+
+```{r}
+a_name <- reactive({
+  # do stuff
+})
+```
+
+
+- named
+
+- very lazy
+
+- called upon to do stuff
+
+- returns a value
+
+
+]
+
+.pull-right[
+## Observers `r ji("dashing_away")`
+
+```{r}
+observe({
+  # do stuff right away
+})
+```
+
+- not named
+
+- very eager
+
+- will react even when it doesn't have reactive dependents
+
+- creates a side-effect
+
+
+]
+---
+
+### Side-effects
+
+Instead of storing the end-result in an R object, the end-result is some interaction with the 'external' world.
+
+- `r ji('floppy_disk')` writing, saving, downloading a file to disk
+
+- `r ji('scissors')` copying & `r ji('clipboard')` pasting files
+
+- updating a database or web API
+
+- `r ji('level_slider')` updating values of input widgets
+
+---
+
+# shinyapps.io
+
+## Create a login
+
+You'll be asked to create an account name which is just the prefix of your future url. You can change this later in `Settings`
+
+## Deleting an account
+- the only way is by contacting support@rstudio.com
+- [https://community.rstudio.com/t/delete-account-shinyapps-io/22692](https://community.rstudio.com/t/delete-account-shinyapps-io/22692)
+
+---
+
+
+
+
+
+
+
+

@@ -45,6 +45,12 @@ class: center, middle
 
 ---
 
+class: inverse, center, middle
+
+# The UI
+
+---
+
 # Inputs
 
 ![](images/slide-images/inputs.png)
@@ -53,20 +59,22 @@ class: center, middle
 # Outputs
 
 ![](images/slide-images/outputs.png)
+---
 
+# Layout
+
+![](images/slide-images/layout.png)
 ---
 
 class: inverse, center, middle
 
 # Reactivity
 
+## The Building Blocks
+
 ---
 
-# The Building Blocks
-
-## Reactives
-
---
+### Reactives
 
 
 ```r
@@ -75,21 +83,35 @@ a_name &lt;- reactive({
 })
 ```
 
+- a conduit between reactive source and endpoint
+
+![](images/slide-images/reactive.png)
+
+---
+
+### Reactives
+
+- can access other reactive values
+
+
+```r
+a_name &lt;- reactive({
+  # do stuff
+})
+
+another_name &lt;- reactive({
+  # do more stuff with a_name
+  a_name() 
+})
+```
+
 --
 
-- very lazy
+- returns a value (e.g. data frame, list, etc. )
 
 --
 
-- called upon to do stuff
-
---
-
-- named
-
---
-
-- returns a value
+- returned value is cached until a reactive dependency is changed 
 
 ---
 
@@ -103,10 +125,15 @@ a_name &lt;- reactive({
 })
 ```
 
-- very lazy
-- called upon to do stuff
+
 - named
+
+- very lazy
+
+- called upon to do stuff
+
 - returns a value
+
 
 ]
 
@@ -120,10 +147,14 @@ observe({
 })
 ```
 
-- very eager
-- will react even when it doesn't have dependents
 - not named
+
+- very eager
+
+- will react even when it doesn't have reactive dependents
+
 - creates a side-effect
+
 
 ]
 ---
@@ -132,8 +163,13 @@ observe({
 
 Instead of storing the end-result in an R object, the end-result is some interaction with the 'external' world.
 
+- 💾 writing, saving, downloading a file to disk
 
+- ✂️ copying &amp; 📋 pasting files
 
+- updating a database or web API
+
+- 🎚 updating values of input widgets
 
 ---
 
@@ -146,57 +182,15 @@ You'll be asked to create an account name which is just the prefix of your futur
 ## Deleting an account
 - the only way is by contacting support@rstudio.com
 - [https://community.rstudio.com/t/delete-account-shinyapps-io/22692](https://community.rstudio.com/t/delete-account-shinyapps-io/22692)
----
-
-# Hello World
-
-Install the **xaringan** package from [Github](https://github.com/yihui/xaringan):
-
-
-```r
-devtools::install_github("yihui/xaringan")
-```
-
---
-
-You are recommended to use the [RStudio IDE](https://www.rstudio.com/products/rstudio/), but you do not have to.
-
-- Create a new R Markdown document from the menu `File -&gt; New File -&gt; R Markdown -&gt; From Template -&gt; Ninja Presentation`;&lt;sup&gt;1&lt;/sup&gt;
-
---
-
-- Click the `Knit` button to compile it;
-
---
-
-- or use the [RStudio Addin](https://rstudio.github.io/rstudioaddins/)&lt;sup&gt;2&lt;/sup&gt; "Infinite Moon Reader" to live preview the slides (every time you update and save the Rmd document, the slides will be automatically reloaded in RStudio Viewer.
-
-.footnote[
-[1] 中文用户请看[这份教程](https://slides.yihui.org/xaringan/zh-CN.html)
-
-[2] See [#2](https://github.com/yihui/xaringan/issues/2) if you do not see the template or addin in RStudio.
-]
-
----
-background-image: url(https://github.com/yihui/xaringan/releases/download/v0.0.2/karl-moustache.jpg)
-background-position: 50% 50%
-class: center, bottom, inverse
-
-# You only live once!
 
 ---
 
-# Hello Ninja
 
-As a presentation ninja, you certainly should not be satisfied by the "Hello World" example. You need to understand more about two things:
 
-1. The [remark.js](https://remarkjs.com) library;
 
-1. The **xaringan** package;
 
-Basically **xaringan** injected the chakra of R Markdown (minus Pandoc) into **remark.js**. The slides are rendered by remark.js in the web browser, and the Markdown source needed by remark.js is generated from R Markdown (**knitr**).
 
----
+
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
