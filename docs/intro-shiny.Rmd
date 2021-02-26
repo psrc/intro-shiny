@@ -24,6 +24,35 @@ library(here)
 library(emo)
 ```
 
+### Shiny in the Wild
+
+.panelset[
+
+.panel[.panel-name[App 1]
+<iframe width="100%" height="400" src="https://jennadallen.shinyapps.io/pet-records-app/?_ga=2.129876812.1380069351.1614316913-2023337461.1608142979" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Source: [Jenna Allen, An App to Visualize and Share My Dogs' Medical History](https://jennadallen.shinyapps.io/pet-records-app/?_ga=2.129876812.1380069351.1614316913-2023337461.1608142979)
+]
+
+.panel[.panel-name[App 2]
+
+<iframe width="100%" height="400" src="https://phillyo.shinyapps.io/intelligentsia/?_ga=2.126665933.1380069351.1614316913-2023337461.1608142979" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Source: [Philipp Reiner, Identifying real estate investment opportunities](https://phillyo.shinyapps.io/intelligentsia/?_ga=2.126665933.1380069351.1614316913-2023337461.1608142979)
+]
+
+.panel[.panel-name[App 3]
+<iframe width="100%" height="400" src="http://dataexplorer.psrc.org/household-travel-survey/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+]
+
+Source: [PSRC, Household Travel Survey](http://dataexplorer.psrc.org/household-travel-survey/)
+]
+
+---
+
+# An R Framework
+
+---
 class: inverse, center, middle
 
 # Running an app
