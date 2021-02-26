@@ -2,7 +2,7 @@ library(shiny)
 library(tidyverse)
 library(here)
 
-df <- read_csv(here('data', 'babynames.csv'))
+df <- data.table::fread(here('data', 'babynames.csv')) %>% as_tibble()
 
 
 # Define UI for application -----------------------------------------------

@@ -2,7 +2,7 @@ library(shiny)
 library(tidyverse)
 library(here)
 
-df <- read_csv(here('data', 'babynames.csv'))
+df <- data.table::fread(here('data', 'babynames.csv')) %>% as_tibble()
 
 
 # Define UI for application -----------------------------------------------
@@ -19,10 +19,20 @@ txt_disp <- textOutput("name_entered")
 tbl_disp <- tableOutput("main_table")
 
 ui <- fluidPage(
-
-  # sidebar layout with sidebarPanel and mainPanel
-
-
+  
+  title,
+  src,
+  
+  # A sidebarLayout with sidebarPanel and mainPanel
+  sidebarLayout(
+    sidebarPanel(
+      txt_box,
+      txt_disp
+    ),
+    mainPanel(
+      tbl_disp
+    )
+  )
 )
 
 

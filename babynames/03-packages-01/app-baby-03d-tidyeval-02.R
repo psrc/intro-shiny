@@ -3,7 +3,7 @@ library(tidyverse)
 library(here)
 library(plotly)
 
-df <- read_csv(here('data', 'babynames.csv'))
+df <- data.table::fread(here('data', 'babynames.csv')) %>% as_tibble()
 
 
 # Define UI for application -----------------------------------------------
@@ -42,10 +42,12 @@ ui <- fluidPage(
                   selected = 'Washington',
                   multiple = TRUE),
       
-      # add dropdowns for user to decide how table is sorted  
+      # add dropdowns for user to decide how table is sorted
+      # allow multiple selections
       selectInput('table_sort',
                   label = 'Sort table by',
-                  choices = c('count', 'sex', 'year')),
+                  choices = c('count', 'sex', 'year'),
+                  multiple = TRUE),
       
       # add action button to delay reactivity
       actionButton("go", label = "Enter")
@@ -96,7 +98,7 @@ server <- function(input, output, session) {
   filtered_df <- eventReactive(input$go, {
     df %>%
       filter(name == clean_name() & state %in% input$state) %>% 
-      arrange(.data[[input$table_sort]]) # add arrange, pass input value using tidy evaluation syntax
+      arrange(across(all_of(input$table_sort))) # add arrange, pass input value using tidy evaluation syntax
   })
   
   output$name_entered <- renderText({

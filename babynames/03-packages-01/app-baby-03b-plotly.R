@@ -1,8 +1,9 @@
 library(shiny)
 library(tidyverse)
 library(here)
+library(plotly)
 
-df <- read_csv(here('data', 'babynames.csv'))
+df <- data.table::fread(here('data', 'babynames.csv')) %>% as_tibble()
 
 
 # Define UI for application -----------------------------------------------
@@ -55,7 +56,8 @@ ui <- fluidPage(
           width = 6,
           # add a place holder for a plot
           h3("Plot"),
-          plotOutput("plot")
+          # convert plot to a Plotly Output
+          plotlyOutput("plot")
         )
       )
     )
@@ -99,13 +101,15 @@ server <- function(input, output, session) {
     filtered_df()
   })
   
-  # render a plot with ggplot2
-  output$plot <- renderPlot({
-    filtered_df() %>% 
+  # render a plot with ggplotly
+  output$plot <- renderPlotly({
+    
+    p <- filtered_df() %>% 
       ggplot(aes(x = year, y = count, color = state)) +
         geom_line() +
-        geom_point() +
         facet_wrap(vars(sex), nrow = 2, scales = "free_y")
+    
+    ggplotly(p)
   })
 
 }

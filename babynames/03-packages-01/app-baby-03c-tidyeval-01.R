@@ -1,8 +1,9 @@
 library(shiny)
 library(tidyverse)
 library(here)
+library(plotly)
 
-df <- read_csv(here('data', 'babynames.csv'))
+df <- data.table::fread(here('data', 'babynames.csv')) %>% as_tibble()
 
 
 # Define UI for application -----------------------------------------------
@@ -34,10 +35,17 @@ ui <- fluidPage(
       txt_disp,
       
       # add a dropdown menu to select state
+      # allow multiple selections
       selectInput("state",
                   label = 'Select State',
                   choices = unique(df$state),
-                  selected = 'Washington'),
+                  selected = 'Washington',
+                  multiple = TRUE),
+      
+      # add dropdowns for user to decide how table is sorted  
+      selectInput('table_sort',
+                  label = 'Sort table by',
+                  choices = c('count', 'sex', 'year')),
       
       # add action button to delay reactivity
       actionButton("go", label = "Enter")
@@ -53,7 +61,8 @@ ui <- fluidPage(
           width = 6,
           # add a place holder for a plot
           h3("Plot"),
-          plotOutput("plot")
+          # convert plot to a Plotly Output
+          plotlyOutput("plot")
         )
       )
     )
@@ -83,9 +92,11 @@ server <- function(input, output, session) {
   })
  
   # change reactive to an eventReactive. Delay reaction until action button is clicked
+  # allow filtering of multiple states
   filtered_df <- eventReactive(input$go, {
-    df %>% 
-      filter(name == clean_name() & state == input$state)
+    df %>%
+      filter(name == clean_name() & state %in% input$state) %>% 
+      arrange(.data[[input$table_sort]]) # add arrange, pass input value using tidy evaluation syntax
   })
   
   output$name_entered <- renderText({
@@ -94,6 +105,17 @@ server <- function(input, output, session) {
   
   output$main_table <- renderTable({
     filtered_df()
+  })
+  
+  # render a plot with ggplotly
+  output$plot <- renderPlotly({
+
+    p <- filtered_df() %>%
+      ggplot(aes(x = year, y = count, color = state)) +
+        geom_line() +
+        facet_wrap(vars(sex), nrow = 2, scales = "free_y")
+
+    ggplotly(p)
   })
 
 }

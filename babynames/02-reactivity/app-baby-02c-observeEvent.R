@@ -2,7 +2,7 @@ library(shiny)
 library(tidyverse)
 library(here)
 
-df <- read_csv(here('data', 'babynames.csv'))
+df <- data.table::fread(here('data', 'babynames.csv')) %>% as_tibble()
 
 
 # Define UI for application -----------------------------------------------
@@ -27,6 +27,10 @@ ui <- fluidPage(
   sidebarLayout(
     sidebarPanel(
       txt_box,
+      
+      # add a button to clear text input
+      actionButton("clear", label = "Clear Name"),
+      
       txt_disp,
       
       # add a dropdown menu to select state
@@ -61,7 +65,7 @@ ui <- fluidPage(
 # Define server logic -----------------------------------------------------
 
 
-server <- function(input, output) {
+server <- function(input, output, session) {
   
   clean_name <- reactive({
     input$name %>% 
@@ -70,9 +74,17 @@ server <- function(input, output) {
       str_to_title()
   })
   
+  # using an observeEvent, update the textInput by clearing the typed name when the 
+  # 'clear' button is clicked
+  observeEvent(input$clear, {
+    updateTextInput(session, "name",
+                    value = ""
+    )
+  })
+ 
   # change reactive to an eventReactive. Delay reaction until action button is clicked
   filtered_df <- eventReactive(input$go, {
-    df %>% 
+    df %>%
       filter(name == clean_name() & state == input$state)
   })
   
