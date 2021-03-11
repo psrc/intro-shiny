@@ -2,6 +2,7 @@ library(shiny)
 library(data.table)
 library(here)
 library(plotly)
+library(DT)
 library(stringr)
 
 df <- fread(here('data', 'babynames.csv'))
@@ -25,7 +26,9 @@ txt_box <- selectizeInput('name',
                           )
 
 txt_disp <- textOutput("name_entered")
-tbl_disp <- tableOutput("main_table")
+
+# in lieu of tableOutput(), use DT's version
+tbl_disp <- DTOutput("main_table")
 
 ## UI layout ----
 
@@ -123,8 +126,29 @@ server <- function(input, output, session) {
     c("You entered:", input$name)
   })
   
-  output$main_table <- renderTable({
-    filtered_df()
+  # in lieu of renderTable(), use DT's version
+  output$main_table <- renderDT({
+    df <- filtered_df()
+    
+    # customize the appearance of the DT
+    datatable(df,
+              colnames = str_to_title(str_replace_all(colnames(df), "_", " ")),
+              options = list(pageLength = 20,
+                             lengthMenu = c(20, 60, 100))
+              ) %>%
+      # conditional styling of cell text
+      formatStyle('name',
+                  'sex',
+                  color = styleEqual(unique(df$sex), c('dodgerblue', 'orange'))
+      ) %>% 
+      # add a color bar to a numeric column.
+      formatStyle('count',
+                  background = styleColorBar(df$count, 'rgba(0, 128, 255, .2)'),
+                  backgroundSize = '100% 90%',
+                  backgroundRepeat = 'no-repeat',
+                  backgroundPosition = 'center'
+                  )
+    
   })
   
   # render a plot with ggplotly
