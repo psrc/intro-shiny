@@ -126,15 +126,22 @@ server <- function(input, output, session) {
     c("You entered:", input$name)
   })
   
+  ## render DT ----
   # in lieu of renderTable(), use DT's version
   output$main_table <- renderDT({
-    df <- filtered_df()
+    
+    # remove last three columns
+    df <- filtered_df()[, 1:(ncol(df)-3)]
     
     # customize the appearance of the DT
     datatable(df,
+              rownames = FALSE,
               colnames = str_to_title(str_replace_all(colnames(df), "_", " ")),
               options = list(pageLength = 20,
-                             lengthMenu = c(20, 60, 100))
+                             lengthMenu = c(20, 60, 100),
+                             dom = 'ltipr' # default is 'lftipr'
+                             ),
+              filter = 'top'
               ) %>%
       # conditional styling of cell text
       formatStyle('name',
@@ -151,7 +158,7 @@ server <- function(input, output, session) {
     
   })
   
-  # render a plot with ggplotly
+  ## render a plot with ggplotly ----
   output$plot <- renderPlotly({
 
     p <- ggplot(filtered_df(), aes(x = year, y = count, color = name)) +
