@@ -96,14 +96,16 @@ class: inverse, center, middle
 
 ---
 
-# Inputs
-
-![](images/slide-images/inputs.png)
----
-
 # Outputs
 
 ![](images/slide-images/outputs.png)
+
+---
+
+# Inputs
+
+![](images/slide-images/inputs.png)
+
 ---
 
 # Layout
