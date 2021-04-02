@@ -99,6 +99,14 @@ class: inverse, center, middle
 # Outputs
 
 ![](images/slide-images/outputs.png)
+---
+
+## App
+
+```{r echo=FALSE, eval = TRUE, out.height='450', out.width='500', fig.align='center'}
+knitr::include_graphics("images/pre-input-app.png")
+```
+
 
 ---
 
