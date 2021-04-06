@@ -118,7 +118,10 @@ knitr::include_graphics("images/pre-input-app.png")
 
 # Layout
 
-![](images/slide-images/layout.png)
+```{r echo=FALSE, eval = TRUE, out.height='450', out.width='500', fig.align='center'}
+knitr::include_graphics("images/layout.png")
+```
+
 ---
 
 class: inverse, center, middle
