@@ -10,6 +10,7 @@
     <script src="libs/tile-view/tile-view.js"></script>
     <link href="libs/panelset/panelset.css" rel="stylesheet" />
     <script src="libs/panelset/panelset.js"></script>
+    <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
   </head>
   <body>
     <textarea id="source">
@@ -125,6 +126,36 @@ class: inverse, center, middle
 # Reactivity
 
 ## The Building Blocks
+
+---
+
+## Reactive Programming
+
+.middle[
+
+.bg-washed-yellow.b--gold.ba.bw2.br3.shadow-5.ph4.mt5[...a style of programming that focuses on values that change over time, and calculations and actions that depend on those values...We want outputs to stay in sync with inputs, while ensuring that we never do more work than necessary.
+
+.tr.right[--Hadley Wickham, *Mastering Shiny*]
+
+]]
+
+--
+
+.bg-washed-green.b--green.ba.bw2.br3.shadow-5.ph4.mt5.flex.justify-around[
+
+.div[
+`reactive({})`
+
+`observe({})`
+]
+
+.div[
+`eventReactive({})`
+
+`observeEvent({})`
+]
+
+]
 
 ---
 
