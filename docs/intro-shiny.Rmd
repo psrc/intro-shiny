@@ -169,6 +169,7 @@ class: inverse, center, middle
 a_name <- reactive({
   # do stuff
 })
+
 ```
 
 - a conduit between reactive source and endpoint
@@ -190,12 +191,19 @@ another_name <- reactive({
   # do more stuff with a_name
   a_name() 
 })
-
 ```
 
 --
 
 - returns a value (e.g. data frame, list, etc. )
+
+--
+
+- subset once and use the result many times (DRY)
+
+--
+
+- decompose large complex code into smaller pieces
 
 --
 
