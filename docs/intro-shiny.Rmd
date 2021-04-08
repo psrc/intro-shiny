@@ -199,7 +199,7 @@ another_name <- reactive({
 
 --
 
-- subset once and use the result many times (DRY)
+- help avoid repetition
 
 --
 
