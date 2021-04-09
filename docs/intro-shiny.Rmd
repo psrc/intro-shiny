@@ -163,6 +163,36 @@ class: inverse, center, middle
 
 ---
 
+## Reactive Programming
+
+.middle[
+
+.bg-washed-yellow.b--gold.ba.bw2.br3.shadow-5.ph4.mt5[...a style of programming that focuses on values that change over time, and calculations and actions that depend on those values...We want outputs to stay in sync with inputs, while ensuring that we never do more work than necessary.
+
+.tr.right[--Hadley Wickham, *Mastering Shiny*]
+
+]]
+
+.bg-washed-green.b--green.ba.bw2.br3.shadow-5.ph4.mt5.flex.justify-around[
+
+.div[
+**`reactive({})`**
+
+**`observe({})`**
+
+]
+
+.div[
+`eventReactive({})`
+
+`observeEvent({})`
+]
+
+]
+
+
+---
+
 ### Reactives
 
 ```{r}
@@ -272,6 +302,27 @@ class: inverse, center, middle
 # Reactivity
 
 ## Delaying Reactions
+
+---
+
+### Delay with Events
+
+.bg-washed-green.b--green.ba.bw2.br3.shadow-5.ph4.mt5.flex.justify-around[
+
+.div[
+`reactive({})`
+
+`observe({})`
+]
+
+.div[
+**`eventReactive({})`**
+
+**`observeEvent({})`**
+]
+
+]
+
 
 ---
 
