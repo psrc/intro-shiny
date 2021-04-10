@@ -287,7 +287,11 @@ observe({
 
 Instead of storing the end-result in an R object, the end-result is some interaction with the 'external' world.
 
-- `r ji('floppy_disk')` writing, saving, downloading a file to disk
+- `r ji('floppy_disk')` writing, downloading a file to disk<sup>*<sup>
+
+.footnote[
+[*] Although Shiny has a specific download file function that doesn't require `observe({})`
+]
 
 - `r ji('scissors')` copying & `r ji('clipboard')` pasting files
 
