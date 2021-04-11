@@ -1,5 +1,5 @@
 ---
-title: "Intro to Shiny"
+title: "Web Apps with Shiny"
 subtitle: "R Learning Series for PSRC"
 # author: "Christy Lam"
 # date: "2021/1/28 (updated: `r Sys.Date()`)"
@@ -25,6 +25,36 @@ library(here)
 library(emo)
 ```
 
+class: middle
+
+.b--moon-gray.ba.bw1.br3.shadow-5.ph2[
+```{r echo=FALSE, eval = TRUE, fig.align='center'}
+knitr::include_graphics("images/mod-one-app.png")
+```
+]
+---
+
+.bg-near-white.b--gray.ba.bw2.br3.shadow-5.ph4.mt6[
+Getting Started (`r ji('person_running')`/`r ji('stop_sign')`)
+]
+--
+.bg-near-white.b--gray.ba.bw2.br3.shadow-5.ph4.mt2[
+
+Anatomy, Inputs `r ji('right_arrow')` & Outputs `r ji('left_arrow')`
+
+Layout
+]
+--
+.bg-near-white.b--gray.ba.bw2.br3.shadow-5.ph4.mt2[
+Reactivity `r ji('gear')`
+]
+--
+.bg-near-white.b--gray.ba.bw2.br3.shadow-5.ph4.mt2[
+ggplot2 & Plotly `r ji('package')`
+]
+
+
+---
 
 # An R Framework
 
@@ -77,6 +107,13 @@ class: center, middle
 
 ![](images/slide-images/Slide1.SVG)
 
+---
+
+class: inverse, center, middle
+
+# Getting Started
+
+## Operating the app
 
 ---
 
