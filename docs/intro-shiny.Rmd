@@ -53,6 +53,11 @@ Reactivity `r ji('gear')`
 ggplot2 & Plotly `r ji('package')`
 ]
 
+---
+
+## Intermediate Files
+
+![](images/slide-images/directories.png)
 
 ---
 
