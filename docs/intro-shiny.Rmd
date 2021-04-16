@@ -232,6 +232,36 @@ class: inverse, center, middle
 
 ]
 
+---
+
+### Chaining Reactives
+
+```{r}
+a_name <- reactive({
+  # do stuff
+})
+```
+
+--
+
+```{r}
+a_name_1 <- reactive({
+  a_name() # do stuff with a_name
+})
+```
+--
+
+```{r}
+a_name_2 <- reactive({
+  a_name_1() # do stuff with a_name_1
+})
+```
+--
+```{r}
+my_output$an_output <- renderTable({
+  a_name_2() # render a_name_2
+})
+```
 
 ---
 

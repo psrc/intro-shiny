@@ -35,7 +35,7 @@ function(input, output, session) {
 
         print(df_sub)
     })
-    
+
     output$name_entered <- renderText({
         c("You entered:", input$name)
     })
