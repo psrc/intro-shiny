@@ -250,14 +250,14 @@ a_name_1 &lt;- reactive({
 
 ```r
 a_name_2 &lt;- reactive({
-  a_name_1 () # do stuff with a_name_1
+  a_name_1() # do stuff with a_name_1
 })
 ```
 --
 
 ```r
 my_output$an_output &lt;- renderTable({
-  a_name_2() # render it
+  a_name_2() # render a_name_2
 })
 ```
 
@@ -456,6 +456,12 @@ observeEvent(input$checkbox %in% c(1, 2), {
 ]
 
 ]
+
+---
+
+class: inverse, center, middle
+
+# End Session One
 
 ---
 
