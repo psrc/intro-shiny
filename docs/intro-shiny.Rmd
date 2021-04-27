@@ -456,6 +456,12 @@ observeEvent(input$checkbox %in% c(1, 2), {
 
 class: inverse, center, middle
 
+# End Session One
+
+---
+
+class: inverse, center, middle
+
 # Styling
 
 <iframe src="https://giphy.com/embed/yYSSBtDgbbRzq" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/frustrated-annoyed-programming-yYSSBtDgbbRzq">Cascading Style Sheets</a></p>
