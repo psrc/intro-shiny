@@ -19,10 +19,12 @@ use_tachyons()
 ```
 
 ```{r setup, include=FALSE}
-options(htmltools.dir.version = FALSE)
+options(htmltools.dir.version = FALSE, htmltools.preserve.raw = FALSE)
 knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
 library(here)
 library(emo)
+library(DT)
+library(dplyr)
 ```
 
 class: middle
@@ -375,6 +377,14 @@ Instead of storing the end-result in an R object, the end-result is some interac
 
 class: inverse, center, middle
 
+# Web Apps with Shiny 
+
+## Session Two
+
+---
+
+class: inverse, center, middle
+
 # Reactivity
 
 ## Delaying Reactions
@@ -456,8 +466,80 @@ observeEvent(input$checkbox %in% c(1, 2), {
 
 class: inverse, center, middle
 
-# End Session One
+# DT
 
+### Not to be confused with data.table
+
+---
+
+# DT a.k.a. DataTables
+
+```{r echo=FALSE, eval=TRUE}
+
+datatable(head(mtcars) %>% select(1:5))
+
+```
+
+---
+
+.bg-washed-green.b--green.ba.bw2.br3.shadow-5.ph4.mt5.flex.justify-around[
+
+.div[
+`formatCurrency()`
+
+`formatPercentage()`
+]
+
+.div[
+`formatRound()`
+
+`formatDate()`
+]
+
+.div[
+`formatStyle()`
+]
+
+
+]
+
+---
+
+.bg-washed-green.b--green.ba.bw2.br3.shadow-5.ph4.mt5.flex.justify-around[
+
+.div[
+`formatCurrency()`
+
+`formatPercentage()`
+]
+
+.div[
+`formatRound()`
+
+`formatDate()`
+]
+
+.div[
+**`formatStyle()`**
+]
+
+
+]
+
+--
+
+.bg-washed-yellow.b--yellow.ba.bw2.br3.shadow-5.ph4.mt5.flex.justify-around[
+
+.div[
+**`styleInterval()`**: style for intervals of data.
+
+**`styleColorBar()`**: displaying a color bar in the cell. Its size is relative to the share of the largest value in the column.
+
+**`styleEqual()`**: style based on unique values.
+]
+
+
+]
 ---
 
 class: inverse, center, middle
