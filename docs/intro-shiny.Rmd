@@ -531,7 +531,7 @@ datatable(head(mtcars) %>% select(1:5))
 .bg-washed-yellow.b--yellow.ba.bw2.br3.shadow-5.ph4.mt5.flex.justify-around[
 
 .div[
-**`styleInterval()`**: style for intervals of data.
+`styleInterval()`: style for intervals of data.
 
 **`styleColorBar()`**: displaying a color bar in the cell. Its size is relative to the share of the largest value in the column.
 
@@ -540,11 +540,35 @@ datatable(head(mtcars) %>% select(1:5))
 
 
 ]
+
 ---
 
 class: inverse, center, middle
 
 # Styling
+
+---
+
+## If web development was building a house `r emo::ji('house')`...
+
+- HTML: structure (content)
+
+.bg-washed-blue.b--blue.ba.bw2.br3.shadow-5.mt2[
+- **CSS**: design 
+    - font 
+    - color
+    - margins
+    - layout 
+    - responsive design
+    - many more...
+]
+- JavaScript: function (plumbing, electricity works)
+
+---
+
+class: inverse, center, middle
+
+## IYKYK
 
 <iframe src="https://giphy.com/embed/yYSSBtDgbbRzq" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/frustrated-annoyed-programming-yYSSBtDgbbRzq">Cascading Style Sheets</a></p>
 
@@ -555,19 +579,29 @@ class: inverse, center, middle
 .pull-left[
 - Default styling for Shiny
 
-- A CSS framework for designing the UI
+- An open-source CSS framework for designing the UI
 
   - Reusable code combining HTML, CSS, and JS
   
   - Preset design (font-family, boldness, padding, etc.)
   
   - Creates responsive websites
+  
+  - Easily customizable...by web designers
 
 ]
 
 .pull-right[
 <iframe src="https://shiny.rstudio.com/gallery/widget-gallery.html" width="480" height="360" frameBorder="0" allowFullScreen></iframe>
 ]
+
+---
+
+### Per Joe Cheng (CTO RStudio)...
+
+![](images/joe-cheng-slide-24.png)
+
+Slide source: Joe Cheng, RStudio::Conf 2020, *Styling Shiny Apps with Sass and Bootstrap 4*. Watch presentation and access his slide deck [here](https://www.rstudio.com/resources/rstudioconf-2020/styling-shiny-apps-with-sass-and-bootstrap-4/).
 
 ---
 
