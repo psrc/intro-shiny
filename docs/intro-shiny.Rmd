@@ -16,6 +16,10 @@ library(xaringanExtra)
 use_tile_view()
 use_panelset()
 use_tachyons()
+use_extra_styles(
+  hover_code_line = TRUE,         
+  mute_unhighlighted_code = TRUE  
+)
 ```
 
 ```{r setup, include=FALSE}
@@ -611,6 +615,92 @@ Using CSS to overwrite Bootstrap = working with tangled `r ji('yarn')`
 
 <iframe src="https://giphy.com/embed/XbmdBop1Fn6J3dT6U6" width="200" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/cat-crazy-blue-XbmdBop1Fn6J3dT6U6"></a></p>
 
+---
+
+## CSS
+
+.panelset[
+
+.panel[.panel-name[HTML]
+
+.pull-left[
+```{HTML}
+<div>
+  
+  <p>Here is some text 
+in a 'box'</p>
+
+</div>
+```
+]
+
+.pull-right[
+<div>
+<p>Here is some text in a 'box'</p>
+</div>
+]
+
+
+]
+
+.panel[.panel-name[HTML + CSS]
+
+.pull-left[
+```{HTML}
+<div class=my-style>
+  
+  <p>Here is some text 
+     in a 'box'</p>
+
+</div>
+```
+
+```{CSS}
+.my-style {
+  
+  color: blue;
+  border: dashed red;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+
+}
+```
+
+]
+
+.pull-right[
+<style>
+.my-style {
+  color: blue;
+  border: dashed red;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+}
+</style>
+
+  
+<div class=my-style>
+  <p>Here is some text
+  in a 'box'<p>
+</div>
+]
+]
+
+]
+
+---
+
+## CSS Selectors
+
+|CSS Selector Type | Examples |
+|------------------|----------|
+|HTML Tag| `p{}`, `div{}`|
+|Class | `.class-name{}` |
+|Id | `#id-name{}`, `#main_table{}` |
+
+...and many others
 
 ---
 

@@ -11,6 +11,7 @@
     <link href="libs/panelset/panelset.css" rel="stylesheet" />
     <script src="libs/panelset/panelset.js"></script>
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
+    <link href="libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
     <script src="libs/htmlwidgets/htmlwidgets.js"></script>
     <script src="libs/jquery/jquery.min.js"></script>
     <link href="libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
@@ -486,8 +487,8 @@ class: inverse, center, middle
 
 # DT a.k.a. DataTables
 
-<div id="htmlwidget-a9f64b63f7882eae910b" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a9f64b63f7882eae910b">{"x":{"filter":"none","data":[["Mazda RX4","Mazda RX4 Wag","Datsun 710","Hornet 4 Drive","Hornet Sportabout","Valiant"],[21,21,22.8,21.4,18.7,18.1],[6,6,4,6,8,6],[160,160,108,258,360,225],[110,110,93,110,175,105],[3.9,3.9,3.85,3.08,3.15,2.76]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>mpg<\/th>\n      <th>cyl<\/th>\n      <th>disp<\/th>\n      <th>hp<\/th>\n      <th>drat<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-bbfa7e3b5a3b9afb121b" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-bbfa7e3b5a3b9afb121b">{"x":{"filter":"none","data":[["Mazda RX4","Mazda RX4 Wag","Datsun 710","Hornet 4 Drive","Hornet Sportabout","Valiant"],[21,21,22.8,21.4,18.7,18.1],[6,6,4,6,8,6],[160,160,108,258,360,225],[110,110,93,110,175,105],[3.9,3.9,3.85,3.08,3.15,2.76]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>mpg<\/th>\n      <th>cyl<\/th>\n      <th>disp<\/th>\n      <th>hp<\/th>\n      <th>drat<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 
 ---
 
@@ -620,6 +621,95 @@ Using CSS to overwrite Bootstrap = working with tangled 🧶
 
 &lt;iframe src="https://giphy.com/embed/XbmdBop1Fn6J3dT6U6" width="200" height="200" frameBorder="0" class="giphy-embed" allowFullScreen&gt;&lt;/iframe&gt;&lt;p&gt;&lt;a href="https://giphy.com/gifs/cat-crazy-blue-XbmdBop1Fn6J3dT6U6"&gt;&lt;/a&gt;&lt;/p&gt;
 
+---
+
+## CSS
+
+.panelset[
+
+.panel[.panel-name[HTML]
+
+.pull-left[
+
+```html
+&lt;div&gt;
+  
+  &lt;p&gt;Here is some text 
+in a 'box'&lt;/p&gt;
+
+&lt;/div&gt;
+```
+]
+
+.pull-right[
+&lt;div&gt;
+&lt;p&gt;Here is some text in a 'box'&lt;/p&gt;
+&lt;/div&gt;
+]
+
+
+]
+
+.panel[.panel-name[HTML + CSS]
+
+.pull-left[
+
+```html
+&lt;div class=my-style&gt;
+  
+  &lt;p&gt;Here is some text 
+     in a 'box'&lt;/p&gt;
+
+&lt;/div&gt;
+```
+
+
+```css
+.my-style {
+  
+  color: blue;
+  border: dashed red;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+
+}
+```
+
+]
+
+.pull-right[
+&lt;style&gt;
+.my-style {
+  color: blue;
+  border: dashed red;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+}
+&lt;/style&gt;
+
+  
+&lt;div class=my-style&gt;
+  &lt;p&gt;Here is some text
+  in a 'box'&lt;p&gt;
+&lt;/div&gt;
+]
+]
+
+]
+
+---
+
+## CSS Selectors
+
+|CSS Selector Type | Examples |
+|------------------|----------|
+|HTML Tag| `p{}`, `div{}`|
+|Class | `.class-name{}` |
+|Id | `#id-name{}`, `#main_table{}` |
+
+...and many others
 
 ---
 
