@@ -555,7 +555,7 @@ class: inverse, center, middle
 
 ## If web development was building a house `r emo::ji('house')`...
 
-- HTML: structure (content)
+- HTML: organizing content (structure)
 
 .bg-washed-blue.b--blue.ba.bw2.br3.shadow-5.mt2[
 - **CSS**: design 
@@ -605,7 +605,7 @@ class: inverse, center, middle
 
 ![](images/joe-cheng-slide-24.png)
 
-Slide source: Joe Cheng, RStudio::Conf 2020, *Styling Shiny Apps with Sass and Bootstrap 4*. Watch presentation and access his slide deck [here](https://www.rstudio.com/resources/rstudioconf-2020/styling-shiny-apps-with-sass-and-bootstrap-4/).
+Slide source: Joe Cheng, RStudio::Conf 2020, *Styling Shiny Apps with Sass and Bootstrap 4* Slide #24. Watch presentation and access his slide deck [here](https://www.rstudio.com/resources/rstudioconf-2020/styling-shiny-apps-with-sass-and-bootstrap-4/).
 
 ---
 
