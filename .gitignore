@@ -4,5 +4,6 @@
 .Ruserdata
 demo/
 *test*.R
+*/04-*/www/
 
 

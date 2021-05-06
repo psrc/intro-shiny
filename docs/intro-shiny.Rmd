@@ -617,7 +617,7 @@ Using CSS to overwrite Bootstrap = working with tangled `r ji('yarn')`
 
 ---
 
-## CSS
+## CSS using Classes
 
 .panelset[
 
@@ -697,10 +697,56 @@ in a 'box'</p>
 |CSS Selector Type | Examples |
 |------------------|----------|
 |HTML Tag| `p{}`, `div{}`|
-|Class | `.class-name{}` |
+|Class | `.class-name{}`, `.my-style{}` |
 |Id | `#id-name{}`, `#main_table{}` |
 
 ...and many others
+
+---
+
+class: inverse, middle, center
+
+# Deploying your App
+
+---
+
+## PSRC Shiny Server
+
+.f6[
+http://aws-linux:3838
+<iframe src="http://aws-linux:3838/" width="780" height="460" frameBorder="0" allowFullScreen></iframe>
+]
+
+
+---
+
+### PSRC Shiny Server, Reqs
+
+.bg-washed-blue.b--blue.ba.bw2.br3.shadow-5.mt2.ph4[
+Code must be on Github `r fontawesome::fa("fab fa-github")`. 
+
+.f6[
+Preferably the app should be in its own repo.
+]
+]
+
+```{r echo=FALSE, eval = TRUE, out.height='350', out.width='400', fig.align='center'}
+knitr::include_graphics("images/github.png")
+```
+
+---
+
+.bg-washed-blue.b--blue.ba.bw2.br3.shadow-5.mv2.ph4[
+Learning Bash commands to navigate the Linux server and reboot your app.
+
+.f6[
+We can help set it up, and our wiki can be a guide:  
+http://aws-linux/mediawiki/index.php/Shiny_Server
+]
+]
+
+<iframe src="http://aws-linux/mediawiki/index.php/Shiny_Server" width="780" height="460" frameBorder="0" allowFullScreen></iframe>
+
 
 ---
 
