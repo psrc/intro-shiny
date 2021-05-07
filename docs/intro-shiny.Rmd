@@ -387,6 +387,70 @@ class: inverse, center, middle
 
 ---
 
+.bg-near-white.b--gray.ba.bw2.br3.shadow-5.ph4.mt6[
+More reactivity `r ji('gear')`
+]
+--
+.bg-near-white.b--gray.ba.bw2.br3.shadow-5.ph4.mt2[
+ggplot2 & Plotly `r ji('package')`
+
+DT `r ji('package')`
+
+]
+--
+.bg-near-white.b--gray.ba.bw2.br3.shadow-5.ph4.mt2[
+Styling `r ji("barber_pole")` `r ji("nail_polish")`
+]
+--
+.bg-near-white.b--gray.ba.bw2.br3.shadow-5.ph4.mt2[
+Deploy `r ji("rocket")`
+]
+
+---
+
+.pull-left[
+## Reactives `r ji("zzz")`
+
+```{r}
+a_name <- reactive({
+  # do stuff
+})
+```
+
+
+- named
+
+- very lazy
+
+- called upon to do stuff
+
+- returns a value
+
+
+]
+
+.pull-right[
+## Observers `r ji("dashing_away")`
+
+```{r}
+observe({
+  # do stuff right away
+})
+```
+
+- not named
+
+- very eager
+
+- will react even when it doesn't have reactive dependents
+
+- creates a side-effect
+
+
+]
+
+---
+
 class: inverse, center, middle
 
 # Reactivity

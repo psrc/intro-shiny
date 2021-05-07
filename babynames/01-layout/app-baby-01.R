@@ -22,7 +22,35 @@ tbl_disp <- tableOutput("main_table")
 
 ui <- fluidPage(
 
-
+  title,
+  src,
+  sidebarLayout(
+    sidebarPanel(
+      txt_box,
+      
+      txt_disp,
+      
+      selectInput('state',
+                  label = 'Select State',
+                  choices = unique(df$state),
+                  selected = 'Washington')
+      
+    ),
+    mainPanel(
+      fluidRow(
+        column(
+          width = 6,
+          h3('Table'),
+          tbl_disp
+        ),
+        column(
+          width = 6,
+          h3('Plot'),
+          plotOutput('plot')
+        )
+      )
+    )
+  )
   
 )
 
@@ -32,13 +60,25 @@ ui <- fluidPage(
 
 server <- function(input, output) {
   
+  clean_name <- reactive({
+    input$name %>% 
+      str_replace_all(" ", "") %>% 
+      str_trim() %>% 
+      str_to_title()
+  })
+  
+  filtered_df <- reactive({
+    df %>% 
+      filter(name == clean_name() & state == input$state)
+  })
+  
   output$name_entered <- renderText({
     c("You entered:", input$name)
   })
   
   output$main_table <- renderTable({
-    df %>% slice(1:20)
-    })
+    filtered_df()
+  })
   
     
 }

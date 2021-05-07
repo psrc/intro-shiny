@@ -392,6 +392,72 @@ class: inverse, center, middle
 
 ---
 
+.bg-near-white.b--gray.ba.bw2.br3.shadow-5.ph4.mt6[
+More reactivity ⚙️
+]
+--
+.bg-near-white.b--gray.ba.bw2.br3.shadow-5.ph4.mt2[
+ggplot2 &amp; Plotly 📦
+
+DT 📦
+
+]
+--
+.bg-near-white.b--gray.ba.bw2.br3.shadow-5.ph4.mt2[
+Styling 💈 💅
+]
+--
+.bg-near-white.b--gray.ba.bw2.br3.shadow-5.ph4.mt2[
+Deploy 🚀
+]
+
+---
+
+.pull-left[
+## Reactives 💤
+
+
+```r
+a_name &lt;- reactive({
+  # do stuff
+})
+```
+
+
+- named
+
+- very lazy
+
+- called upon to do stuff
+
+- returns a value
+
+
+]
+
+.pull-right[
+## Observers 💨
+
+
+```r
+observe({
+  # do stuff right away
+})
+```
+
+- not named
+
+- very eager
+
+- will react even when it doesn't have reactive dependents
+
+- creates a side-effect
+
+
+]
+
+---
+
 class: inverse, center, middle
 
 # Reactivity
@@ -487,8 +553,8 @@ class: inverse, center, middle
 
 # DT a.k.a. DataTables
 
-<div id="htmlwidget-40fa1b343aa3c4176c5c" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-40fa1b343aa3c4176c5c">{"x":{"filter":"none","data":[["Mazda RX4","Mazda RX4 Wag","Datsun 710","Hornet 4 Drive","Hornet Sportabout","Valiant"],[21,21,22.8,21.4,18.7,18.1],[6,6,4,6,8,6],[160,160,108,258,360,225],[110,110,93,110,175,105],[3.9,3.9,3.85,3.08,3.15,2.76]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>mpg<\/th>\n      <th>cyl<\/th>\n      <th>disp<\/th>\n      <th>hp<\/th>\n      <th>drat<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-167bad6a254d20dc076e" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-167bad6a254d20dc076e">{"x":{"filter":"none","data":[["Mazda RX4","Mazda RX4 Wag","Datsun 710","Hornet 4 Drive","Hornet Sportabout","Valiant"],[21,21,22.8,21.4,18.7,18.1],[6,6,4,6,8,6],[160,160,108,258,360,225],[110,110,93,110,175,105],[3.9,3.9,3.85,3.08,3.15,2.76]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>mpg<\/th>\n      <th>cyl<\/th>\n      <th>disp<\/th>\n      <th>hp<\/th>\n      <th>drat<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 
 ---
 
