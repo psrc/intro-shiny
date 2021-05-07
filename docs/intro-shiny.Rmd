@@ -403,6 +403,10 @@ Styling `r ji("barber_pole")` `r ji("nail_polish")`
 ]
 --
 .bg-near-white.b--gray.ba.bw2.br3.shadow-5.ph4.mt2[
+Multi-file apps `r ji("page_with_curl")`
+]
+--
+.bg-near-white.b--gray.ba.bw2.br3.shadow-5.ph4.mt2[
 Deploy `r ji("rocket")`
 ]
 
