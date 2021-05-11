@@ -684,6 +684,19 @@ Using CSS to overwrite Bootstrap = working with tangled `r ji('yarn')`
 <iframe src="https://giphy.com/embed/XbmdBop1Fn6J3dT6U6" width="200" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/cat-crazy-blue-XbmdBop1Fn6J3dT6U6"></a></p>
 
 ---
+class: center, middle
+
+Using CSS to overwrite Bootstrap = working with tangled `r ji('yarn')`
+
+<iframe src="https://giphy.com/embed/XbmdBop1Fn6J3dT6U6" width="200" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/cat-crazy-blue-XbmdBop1Fn6J3dT6U6"></a></p>
+
+.bg-washed-blue.b--blue.ba.bw2.br3.shadow-5.mt2.flex.justify-center[
+.div.mr6[`shinythemes`] 
+.div.ml6[`bslib`]
+]
+
+
+---
 
 ## CSS using Classes
 
